@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Calender;
+import java.util.Calendar;
 
 /**
  * ライタ：総理大臣の情報のテーブルをHTMLページとして書き出す。
@@ -35,7 +35,7 @@ public class Writer extends IO
 	 */
 	public Attributes attributes()
 	{
-		return this.table.attribute();
+		return this.table.attributes();
 	}
 	
 	/**
@@ -101,14 +101,14 @@ public class Writer extends IO
 	 */
 	public void writeFooterOn(BufferedWriter outputWriter)
 	{
-		Calender aCalender = Calender.getInstance();
+		Calendar aCalendar = Calendar.getInstance();
         
-        int year = aCalender.get(Calender.YEAR);
-        int month = aCalender.get(Calender.MONTH) + 1;
-        int day = aCalender.get(Calender.DATE);
-        int hour = aCalender.get(Calender.HOUR_OF_DAY);
-		int minute = aCalender.get(Calendar.MINUTE);
-		int second = aCalender.get(Calendar.SECOND);
+        int year = aCalendar.get(Calendar.YEAR);
+        int month = aCalendar.get(Calendar.MONTH) + 1;
+        int day = aCalendar.get(Calendar.DATE);
+        int hour = aCalendar.get(Calendar.HOUR_OF_DAY);
+		int minute = aCalendar.get(Calendar.MINUTE);
+		int second = aCalendar.get(Calendar.SECOND);
 
 		StringBuffer aBuffer = new StringBuffer();
 		aBuffer.append(this.getClass().getName());
