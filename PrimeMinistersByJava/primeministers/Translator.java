@@ -94,7 +94,7 @@ public class Translator extends Object
 	
 	/**
 	 * 在位日数を計算して、それを文字列にして応答する。
-	 * 良好（2013年12月8日）
+	 * 良好（2013年12月9日）
 	 */
 	public String computeNumberOfDays(String periodString)
 	{
@@ -113,7 +113,7 @@ public class Translator extends Object
 			Calendar aCalendar = Calendar.getInstance();
 			yearTo = aCalendar.get(Calendar.YEAR);        //現在の年を取得
 			monthTo = aCalendar.get(Calendar.MONTH) + 1;  //現在の月を取得
-			dayTo = aCalendar.get(Calendar.DATE) + 1;         //現在の日を取得
+			dayTo = aCalendar.get(Calendar.DATE) + 1;     //現在の日を取得
 			
 		}
 		else
@@ -141,11 +141,12 @@ public class Translator extends Object
 	}
 	
 	/**
-	 * サムネイル画像から画像へ飛ぶためのHTMP文字列を生成して、それを応答する。
+	 * サムネイル画像から画像へ飛ぶためのHTML文字列を生成して、それを応答する。
 	 * 良好（2013年12月8日）
 	 */
 	public String computeStringOfImage(String aString,Tuple aTuple,int no)
 	{
+		imageTag = "<a name="40" href="images/040.jpg"><img class="borderless" src="thumbnails/040.jpg" width="25" height="32" alt="040.jpg"></a>";
 		return null;
 	}
 	/**

@@ -84,7 +84,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfDays()
 	{
-		return this.indexOf("在位日数");
+		return this.indexOf("day");
 	}
 	
 	/**
@@ -92,7 +92,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfImage()
 	{
-		return this.indexOf("画像");
+		return this.indexOf("image");
 	}
 	
 	/**
@@ -100,7 +100,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfKana()
 	{
-		return this.indexOf("ふりがな");
+		return this.indexOf("kana");
 	}
 	
 	/**
@@ -108,7 +108,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfName()
 	{
-		return this.indexOf("氏名");
+		return this.indexOf("names");
 	}
 	
 	/**
@@ -116,7 +116,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfNo()
 	{
-		return this.indexOf("人目");
+		return this.indexOf("no");
 	}
 	
 	/**
@@ -124,7 +124,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfOrder()
 	{
-		return this.indexOf("代");
+		return this.indexOf("order");
 	}
 	
 	/**
@@ -132,7 +132,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfParty()
 	{
-		return this.indexOf("政党");
+		return this.indexOf("party");
 	}
 	
 	/**
@@ -140,7 +140,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfPeriod()
 	{
-		return this.indexOf("在位期間");
+		return this.indexOf("period");
 	}
 	
 	/**
@@ -148,7 +148,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfPlace()
 	{
-		return this.indexOf("出身地");
+		return this.indexOf("birth");
 	}
 	
 	/**
@@ -156,7 +156,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfSchool()
 	{
-		return this.indexOf("出身校");
+		return this.indexOf("school");
 	}
 	
 	/**
@@ -164,7 +164,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfThumbnail()
 	{
-		return this.indexOf("縮小画像");
+		return this.indexOf("thumbnail");
 	}
 	
 	/**
