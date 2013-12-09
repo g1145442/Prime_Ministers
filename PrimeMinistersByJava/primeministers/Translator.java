@@ -104,12 +104,12 @@ public class Translator extends Object
 		int yearFrom, monthFrom, dayFrom;
 		int yearTo, monthTo, dayTo;
 		
+		yearFrom = Integer.parseInt(aStringArray.get(0));
+		monthFrom = Integer.parseInt(aStringArray.get(1));
+		dayFrom = Integer.parseInt(aStringArray.get(2));
+		
 		if(aStringArray.size() < 4)
 		{
-			yearFrom = Integer.parseInt(aStringArray.get(0));
-			monthFrom = Integer.parseInt(aStringArray.get(1));
-			dayFrom = Integer.parseInt(aStringArray.get(2));
-			
 			Calendar aCalendar = Calendar.getInstance();
 			yearTo = aCalendar.get(Calendar.YEAR);        //現在の年を取得
 			monthTo = aCalendar.get(Calendar.MONTH) + 1;  //現在の月を取得
@@ -118,11 +118,6 @@ public class Translator extends Object
 		}
 		else
 		{
-		
-			yearFrom = Integer.parseInt(aStringArray.get(0));
-			monthFrom = Integer.parseInt(aStringArray.get(1));
-			dayFrom = Integer.parseInt(aStringArray.get(2));
-		
 			yearTo = Integer.parseInt(aStringArray.get(3));
 			monthTo = Integer.parseInt(aStringArray.get(4));
 			dayTo = Integer.parseInt(aStringArray.get(5));
