@@ -7,6 +7,7 @@ import java.util.Calendar;
 
 /**
  * トランスレータ：総理大臣のCSVファイルをHTMLページへと変換するプログラム。
+ * 良好（2013年12月9日）
  */
 public class Translator extends Object
 {

@@ -15,16 +15,19 @@ public class Attributes extends Object
 	
 	/**
 	 * 属性リストのキー群を記憶するフィールド。
+	 * 良好（2013年12月9日）
 	 */
 	private ArrayList<String> keys;
 	
 	/**
 	 * 属性リストの名前群を記憶するフィールド。
+	 * 良好（2013年12月9日）
 	 */
 	private ArrayList<String> names;
 	
 	/**
 	 * 入力用("input")または出力用("output")で属性リストを作成するコンストラクタ。
+	 * 良好（2013年12月9日）
 	 */
 	public Attributes(String aString)
 	{
@@ -65,6 +68,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 指定されたインデックスに対応する名前を応答する。名前がないときはキーを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	protected String at(int index)
 	{
@@ -73,6 +77,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 指定されたキー文字列のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	private int indexOf(String aString)
 	{
@@ -81,6 +86,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 在位日数のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfDays()
 	{
@@ -89,6 +95,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 画像のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfImage()
 	{
@@ -97,6 +104,7 @@ public class Attributes extends Object
 	
 	/**
 	 * ふりがなのインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfKana()
 	{
@@ -105,6 +113,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 氏名のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfName()
 	{
@@ -113,6 +122,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 番号のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfNo()
 	{
@@ -121,6 +131,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 代のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfOrder()
 	{
@@ -129,6 +140,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 政党のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfParty()
 	{
@@ -137,6 +149,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 在位期間のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfPeriod()
 	{
@@ -145,6 +158,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 出身地のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfPlace()
 	{
@@ -153,6 +167,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 出身校のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfSchool()
 	{
@@ -161,6 +176,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 画像のインデックスを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int indexOfThumbnail()
 	{
@@ -169,6 +185,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 指定されたインデックスに対応するキーを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	protected String keyAt(int index)
 	{
@@ -177,6 +194,7 @@ public class Attributes extends Object
 	
 	/**
 	 * キー群を応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public ArrayList<String> keys()
 	{
@@ -185,6 +203,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 指定されたインデックスに対応する名前を応答する。
+	 * 良好（2013年12月9日）
 	 */
 	protected String nameAt(int index)
 	{
@@ -193,6 +212,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 名前群を応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public ArrayList<String> names()
 	{
@@ -201,6 +221,7 @@ public class Attributes extends Object
 	
 	/**
 	 *	名前群を設定する。
+	 * 良好（2013年12月9日）
 	 */
 	public void names(ArrayList<String> aCollection)
 	{
@@ -209,6 +230,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 属性リストの長さを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public int size()
 	{
@@ -217,6 +239,7 @@ public class Attributes extends Object
 	
 	/**
 	 * 自分自身を文字列にして、それを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	@Override
 	public String toString()

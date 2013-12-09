@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 /**
  * 入出力：リーダ・ダウンローダ・ライタを抽象する。
+ * 良好（2013年12月9日）
  */
 public abstract class IO extends Object
 {
@@ -28,11 +29,13 @@ public abstract class IO extends Object
 	
 	/**
 	 * テーブル(表：スプレッドシート)を記憶するフィールド。
+	 * 良好（2013年12月9日）
 	 */
 	protected Table table;
 	
 	/**
 	 * 入出力のコンストラクタ。
+	 * 良好（2013年12月9日）
 	 */
 	public IO()
 	{
@@ -41,6 +44,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * ファイルやディレクトリを削除するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static void deleteFoleOrDirectory(File aFile)
 	{
@@ -53,6 +57,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 総理大臣ページのためのディレクトリ(存在しなければ作成して)を応答するメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static File directoryOfPages()
 	{
@@ -66,6 +71,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 入出力する際の文字コードを応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static String encodingSymbol()
 	{
@@ -74,6 +80,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定されたファイルからテキストを読み込んで、それを行リストにして応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static ArrayList<String> readTextFromFile(File aFile)
 	{
@@ -102,6 +109,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定されたファイル文字列からテキストを読み込んで、それを行リストにして応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static ArrayList<String> readTextFromFile(String fileString)
 	{
@@ -112,6 +120,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定されたURL文字列からテキストを読み込んで、それを行リストにして応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static ArrayList<String> readTextFromURL(String urlString){
 		URL aURL = null;
@@ -123,6 +132,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定されたURLからテキストを読み込んで、それを行リストにして応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static ArrayList<String> readTextFromURL(URL aURL) {
 		ArrayList<String> aCollection = new ArrayList<String>();
@@ -149,6 +159,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 文字列をセパレータで分割したトークン列を応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static ArrayList<String> splitString(String string, String separators)
 	{
@@ -187,6 +198,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * テーブルを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public Table table(){
 		return this.table;
@@ -194,6 +206,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定された行リストを、指定されたファイルに書き出すクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static void writeText(ArrayList<String> aCollection,File aFile)
 	{
@@ -216,6 +229,7 @@ public abstract class IO extends Object
 	
 	/**
 	 * 指定された行リストを、指定されたファイル名のファイルに書き出すクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static void writeText(ArrayList<String> aCollection,String fileString){
 		File aFile = new File(fileString);
