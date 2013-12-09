@@ -127,6 +127,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の情報を記したCSVファイルの在処(URL)を文字列で応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public String url()
 	{
@@ -135,6 +136,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の情報の在処(URL)を文字列で応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static String urlString()
 	{
@@ -144,6 +146,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の情報を記したCSVファイル在処(URL)を文字列で応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public static String urlStringOfCSV()
 	{
