@@ -21,20 +21,23 @@ public class Reader extends IO
 	
 	/**
 	 * 総理大臣の情報を記したCSVファイルを記憶するフィールド。
+	 * 良好（2013年12月8日）
 	 */
 	private File filename;
 	
 	/**
 	 * リーダのコンストラクタ。
+	 * 良好（2013年12月8日）
 	 */
 	public Reader()
 	{
-		this.filename = new File("PrimeMinisters.csv");
+		this.filename = new File(IO.directoryOfPages(),"PrimeMinisters.csv");
 		return;
 	}
 	
 	/**
 	 * ダウンロードしたCSVファイルを応答する。
+	 * 良好（2013年12月8日）
 	 */
 	public File filename()
 	{
@@ -43,30 +46,34 @@ public class Reader extends IO
 	
 	/**
 	 * ダウンロードしたCSVファイルのローカルなファイルを応答するクラスメソッド。
+	 * 良好（2013年12月8日）
 	 */
-	public static File filenameOfCSV(){
-		return filename.getAbsoluteFile;
+	public File filenameOfCSV()
+	{
+		return this.filename.getAbsoluteFile();
 	}
 	
 	/**
 	 * ダウンロードしたCSVファイルを読み込んでテーブルを応答する。
+	 * バグ（2013年12月8日）
 	 */
 	public Table table()
 	{
-		
-		boolean first = true;
+		boolean isFirstLine = true;
+		Table inputTable = new Table();
 		ArrayList<String> aCollection = IO.readTextFromFile(this.filename);
 		
-		Table inputTable = new Table();
-		//inputTable.attributes(new Attributes("input"));
-		
-		for (String str : aCollection){
-			ArrayList<String> aRaw = IO.splitString(str, ",");
-			if(first){
+		for (String aString : aCollection)
+		{
+			ArrayList<String> aRaw = IO.splitString(aString, ",");
+			if(isFirstLine)
+			{
 				inputTable.attributes(new Attributes("input"));
-				first = false;
-			}else{
-				Tuple inputTuple = new Tuple(inputTable.attributes(), IO.splitString(aRaw, ","));
+				isFirstLine = false;
+			}
+			else
+			{
+				Tuple inputTuple = new Tuple(inputTable.attributes(), aRaw);
 				inputTable.add(inputTuple);
 			}
 		}

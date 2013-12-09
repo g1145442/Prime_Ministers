@@ -34,28 +34,41 @@ public abstract class IO extends Object
 	/**
 	 * 入出力のコンストラクタ。
 	 */
-	public IO() {
+	public IO()
+	{
 		return;
 	}
 	
 	/**
 	 * ファイルやディレクトリを削除するクラスメソッド。
 	 */
-	public static void deleteFoleOrDirectory(File aFile) {
+	public static void deleteFoleOrDirectory(File aFile)
+	{
+		if(aFile.exists())
+		{
+			aFile.delete();
+		}
 		return;
 	}
 	
 	/**
 	 * 総理大臣ページのためのディレクトリ(存在しなければ作成して)を応答するメソッド。
 	 */
-	public static File directoryOfPages(){
-		return null;
+	public static File directoryOfPages()
+	{
+		File aFile = new File(System.getProperty("user.home")+"/Desktop","SouriDaijin");
+		if(aFile.exists() == false)
+		{
+			aFile.mkdir();
+		}
+		return aFile;
 	}
 	
 	/**
 	 * 入出力する際の文字コードを応答するクラスメソッド。
 	 */
-	public static String encodingSymbol(){
+	public static String encodingSymbol()
+	{
 		return "UTF-8";
 	}
 	
@@ -65,6 +78,7 @@ public abstract class IO extends Object
 	public static ArrayList<String> readTextFromFile(File aFile)
 	{
 		ArrayList<String> aCollection = new ArrayList<String>();
+		
 		try
 		{
 			FileInputStream inputStream = new FileInputStream(aFile);
@@ -82,6 +96,7 @@ public abstract class IO extends Object
 		catch (FileNotFoundException anException) { anException.printStackTrace(); }
 		catch (UnsupportedEncodingException anException) { anException.printStackTrace(); }
 		catch (IOException anException) { anException.printStackTrace(); }
+		
 		return aCollection;
 	}
 	
@@ -135,7 +150,8 @@ public abstract class IO extends Object
 	/**
 	 * 文字列をセパレータで分割したトークン列を応答するクラスメソッド。
 	 */
-	public static ArrayList<String> splitString(String string,String separators){
+	public static ArrayList<String> splitString(String string, String separators)
+	{
 		ArrayList<Integer> indexes;
 		int stop;
 		int index;

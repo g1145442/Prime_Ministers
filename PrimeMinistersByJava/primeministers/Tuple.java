@@ -14,19 +14,22 @@ public class Tuple extends Object
 	 */
 	
 	/**
-	 *属性リストを記憶するフィールド。
+	 * 属性リストを記憶するフィールド。
+	 * 良好（2013年12月5日）
 	 */
 	private Attributes attributes;
 	
 	/**
 	 * 値リストを記憶するフィールド。
+	 * 良好（2013年12月5日）
 	 */
 	private ArrayList<String> values;
 	
 	/**
-	 * 属性リスト値リストからタプルを作るコンストラクタ。 ( 12/5 良好 )
+	 * 属性リスト値リストからタプルを作るコンストラクタ。
+	 * 良好（2013年12月5日）
 	 */
-	public Tuple(Attributes instanceOfAttributes,ArrayList<String> valueCollection)
+	public Tuple(Attributes instanceOfAttributes, ArrayList<String> valueCollection)
 	{
 		this.attributes = instanceOfAttributes;
 		this.values = valueCollection;
@@ -34,14 +37,17 @@ public class Tuple extends Object
 	}
 	
 	/**
-	 * 属性リストを応答する。 ( 12/5 良好 )
+	 * 属性リストを応答する。
+	 * 良好（2013年12月5日）
 	 */
-	public Attributes attributes(){
+	public Attributes attributes()
+	{
 		return this.attributes;
 	}
 	
 	/**
 	 * 自分自身を文字列にして、それを応答する。
+	 * 良好（2013年12月5日）
 	 */
 	public String toString()
 	{
@@ -53,8 +59,10 @@ public class Tuple extends Object
 	
 	/*
 	 * 値リストを応答する。
+	 * 良好（2013年12月5日）
 	 */
-	public ArrayList<String> values(){
+	public ArrayList<String> values()
+	{
 		return this.values;
 	}
 }

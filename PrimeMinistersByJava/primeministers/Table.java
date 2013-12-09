@@ -35,7 +35,7 @@ public class Table extends Object
 	private ArrayList<Tuple> tuples;
 	
 	/**
-	 * テーブルのコンストラクタ。 (OK)
+	 * テーブルのコンストラクタ。
 	 */
 	public Table()
 	{
@@ -46,7 +46,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * タプルを追加する。 (OK)
+	 * タプルを追加する。
 	 */
 	public void add(Tuple aTuple)
 	{
@@ -55,7 +55,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * 属性リストを応答する。 (OK)
+	 * 属性リストを応答する。
 	 */
 	public Attributes attributes()
 	{
@@ -63,7 +63,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * 属性リストを設定する。 (OK)
+	 * 属性リストを設定する。
 	 */
 	public void attributes(Attributes instanceOfAttributes)
 	{
@@ -72,7 +72,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * 画像群を応答する。 (OK)
+	 * 画像群を応答する。
 	 */
 	public ArrayList<BufferedImage> images()
 	{
@@ -80,7 +80,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * 画像またはサムネイル画像の文字列を受け取って該当画像を応答する。 (NO)
+	 * 画像またはサムネイル画像の文字列を受け取って該当画像を応答する。
 	 */
 	private BufferedImage picture(String aString)
 	{
@@ -88,7 +88,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * サムネイル画像群を応答する。 (OK)
+	 * サムネイル画像群を応答する。
 	 */
 	public ArrayList<BufferedImage> thumbnails()
 	{
@@ -96,9 +96,10 @@ public class Table extends Object
 	}
 	
 	/**
-	 * 自分自身を文字列にして、それを応答する。 (OK)
+	 * 自分自身を文字列にして、それを応答する。
 	 */
-	public String toString(){
+	public String toString()
+	{
 		StringBuffer aBuffer = new StringBuffer();
 		Class aClass = this.getClass();
 		aBuffer.append(aClass.getName());
@@ -106,7 +107,7 @@ public class Table extends Object
 	}
 	
 	/**
-	 * タプル群を応答する。 (OK)
+	 * タプル群を応答する。
 	 */
 	public ArrayList<Tuple> tuples(){
 		return this.tuples;

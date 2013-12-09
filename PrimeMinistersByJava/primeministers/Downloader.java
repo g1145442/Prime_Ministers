@@ -29,16 +29,14 @@ public class Downloader extends IO
 	{
 		this.url = this.url();
 	}
-
-	/*
+	
+	/**
 	 * 総理大臣の情報を記しCSVファイルをダウンロードする。
 	 */
 	public void downloadCSV()
 	{
-		File aFile;
-		aFile = new File(this.url);
-		ArrayList<String> aCollection = IO.readTextFromFile(aFile);
-		aFile = new File("PrimeMinisters.csv");
+		ArrayList<String> aCollection = IO.readTextFromURL(this.url);
+		File aFile = new File(IO.directoryOfPages(),"PrimeMinisters.csv");
 		IO.writeText(aCollection, aFile);
 		return;
 	}
@@ -49,88 +47,97 @@ public class Downloader extends IO
 	 */
 	public void downloadImages()
 	{
-		int urlMaxNum = 26;	
+		/*
+		int urlMaxNum = 23;
 		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
 		for(int i=0;i<urlMaxNum;i++)
 		{
-			try {
-				readImage[i] = ImageIO.read(new URL("http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters/images/0"+Integer.toString(i+39)+".jpg"));
-			} catch (Exception e) {
-				e.printStackTrace();
-				readImage = null;
+			try
+			{
+				readImage[i] = ImageIO.read(new URL(this.urlString()+"images/0"+Integer.toString(i+39)+".jpg"));
+			}
+			catch (Exception anException)
+			{
+				anException.printStackTrace();
 				System.out.println((i+39)+"しっぱい");
 			}
-
-		}
-
+		} */
 		return;
 	}
-
+	
 	/**
 	 * 総理大臣の画像群またはサムネイル画像群をダウンロードする。
 	 */
 	private void downloadPictures(int indexOfPicture)
 	{
+		/*
 		BufferedImage readImage;
 		BufferedImage readThumbnail;
-		try {
-			readImage = ImageIO.read(new URL("http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters/images/0"+Integer.toString(indexOfPicture)+".jpg"));
-			readThumbnail = ImageIO.read(new URL("http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters/thumbnails/0"+Integer.toString(indexOfPicture)+".jpg"));
-		} catch (Exception e) {
-			e.printStackTrace();
-			readImage = null;
+		try
+		{
+			readImage = ImageIO.read(new URL(this.urlString()+"images/0"+Integer.toString(indexOfPicture)+".jpg"));
+			readThumbnail = ImageIO.read(new URL(this.urlString()+"thumbnails/0"+Integer.toString(indexOfPicture)+".jpg"));
 		}
-
+		catch (Exception anException)
+		{
+			anException.printStackTrace();
+		}
+		*/
 		return;
 	}
-
+	
 	/**
 	 * 総理大臣の画像群をダウンロードする。
 	 */
 	public void downloadThumbnails()
 	{
-		int urlMaxNum = 26;	
+		/*
+		int urlMaxNum = 23;
 		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
 		for(int i=0;i<urlMaxNum;i++)
 		{
-			try {	
-				readImage[i] = ImageIO.read(new URL("http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters/images/0"+Integer.toString(i+39)+".jpg"));
-			} catch (Exception e) {
-				e.printStackTrace();
-				readImage = null;
+			try
+			{
+				readImage[i] = ImageIO.read(new URL(this.urlString() + "images/0"+Integer.toString(i+39)+".jpg"));
+			}
+			catch (Exception anException)
+			{
+				anException.printStackTrace();
 				System.out.println((i+39)+"しっぱい");
 			}
 		}
+		*/
 		return;
 	}
-
+	
 	/**
 	 * 総理大臣の情報を記したCSVファイルをダウンロードして、画像群やサムネイル画像群を
 	 * ダウンロードし、テーブルで応答する。
+	 * バグ（2013年12月9日）
 	 */
 	@Override
-		public Table table()
-		{
-			Reader aReader = new Reader();
-			this.table = aReader.table();
-
-			this.downloadImages();
-			this.downloadThumbnails();
-
-			return this.table;
-		}
-
+	public Table table()
+	{
+		Reader aReader = new Reader();
+		this.table = aReader.table();
+		this.downloadImages();
+		this.downloadThumbnails();
+		return this.table;
+	}
+	
 	/**
 	 * 総理大臣の情報を記したCSVファイルの在処(URL)を文字列で応答する。
 	 */
-	public String url(){
+	public String url()
+	{
 		return this.urlStringOfCSV();
 	}
-
+	
 	/**
 	 * 総理大臣の情報の在処(URL)を文字列で応答するクラスメソッド。
 	 */
-	public static String urlString() {
+	public static String urlString()
+	{
 		return "http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters/";
 	}
 	
@@ -138,7 +145,8 @@ public class Downloader extends IO
 	/**
 	 * 総理大臣の情報を記したCSVファイル在処(URL)を文字列で応答するクラスメソッド。
 	 */
-	public static String urlStringOfCSV() {
+	public static String urlStringOfCSV()
+	{
 		return Downloader.urlString() + "PrimeMinisters.csv";
 	}
 }

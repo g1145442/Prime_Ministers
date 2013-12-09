@@ -28,30 +28,33 @@ public class Attributes extends Object
 	 */
 	public Attributes(String aString)
 	{
+		this.keys = new ArrayList<String>();
+		this.names = new ArrayList<String>();
+	
 		if(aString == "input")
 		{
-			//input処理
 			String[] aCollection = new String[]
 			{
 				"no", "order", "names", "kana", "period","school",
 				"party", "birth", "image", "thumbnail"
 			};
 			
-			for(String each : aCollection){
-				this.keys.add(each);
+			for(String inputString : aCollection)
+			{
+				this.keys.add(inputString);
 			}
 		}
 		else if(aString == "output")
 		{
-			//output処理
 			String[] aCollection = new String[]
 			{
 				"no", "order", "names", "kana", "period","day", "school",
 				"party", "birth", "image"
 			};
 			
-			for(String each : aCollection){
-				this.keys.add(each);
+			for(String outputString : aCollection)
+			{
+				this.keys.add(outputString);
 			}
 		}
 		else
