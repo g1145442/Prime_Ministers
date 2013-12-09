@@ -47,6 +47,11 @@ public class Downloader extends IO
 	 */
 	public void downloadImages()
 	{
+		for (Tuple aTuple : this.table().tuples())
+		{
+		}
+		
+		
 		/*
 		int urlMaxNum = 23;
 		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
@@ -120,8 +125,9 @@ public class Downloader extends IO
 	{
 		Reader aReader = new Reader();
 		this.table = aReader.table();
-		this.downloadImages();
-		this.downloadThumbnails();
+		
+		//this.downloadImages();
+		//this.downloadThumbnails();
 		return this.table;
 	}
 	

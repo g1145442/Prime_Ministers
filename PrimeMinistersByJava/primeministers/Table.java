@@ -109,7 +109,8 @@ public class Table extends Object
 	/**
 	 * タプル群を応答する。
 	 */
-	public ArrayList<Tuple> tuples(){
+	public ArrayList<Tuple> tuples()
+	{
 		return this.tuples;
 	}
 }
