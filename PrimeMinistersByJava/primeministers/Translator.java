@@ -146,8 +146,15 @@ public class Translator extends Object
 	 */
 	public String computeStringOfImage(String aString,Tuple aTuple,int no)
 	{
-		imageTag = "<a name="40" href="images/040.jpg"><img class="borderless" src="thumbnails/040.jpg" width="25" height="32" alt="040.jpg"></a>";
-		return null;
+		ArrayList<String> values = aTuple.values();
+		
+		String aNo = values.get(aTuple.attributes().keys().indexOf("No"));
+		String aImage = values.get(aTuple.attributes().keys().indexOf("image"));
+		String aThumbnail = values.get(aTuple.attributes().keys().indexOf("thumbnail"));
+		
+		String imageTag = "<a name="+aNo+" href="+aImage+"><img class=\"borderless\" src="+aThumbnail+" width=\"25\" height=\"32\" alt="+aNo+".jpg></a>";
+		
+		return imageTag;
 	}
 	/**
 	 * 総理大臣のCSVファイルを基にしたテーブルから、HTMLページを基にするテーブルに変換して、
