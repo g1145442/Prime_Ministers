@@ -12,6 +12,7 @@ import java.util.Calendar;
 
 /**
  * ライタ：総理大臣の情報のテーブルをHTMLページとして書き出す。
+ * 良好（2013年12月9日）
  */
 public class Writer extends IO
 {
@@ -23,6 +24,7 @@ public class Writer extends IO
 	
 	/**
 	 * ライタのコンストラクタ。
+	 * 良好（2013年12月9日）
 	 */
 	public Writer()
 	{
@@ -32,6 +34,7 @@ public class Writer extends IO
 	
 	/**
 	 * 属性リストを応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public Attributes attributes()
 	{
@@ -40,6 +43,7 @@ public class Writer extends IO
 	
 	/**
 	 * ローカルなHTMLのインデックスファイル(index.html)を応答するクラスメソッド。
+	 * 良好（2013年12月9日）
 	 */
 	public File filenameOfHTML()
 	{
@@ -50,6 +54,7 @@ public class Writer extends IO
 	
 	/**
 	 * HTMLページを基にするテーブルを受け取って、インデックスファイル(index.html)に書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	public Table table(Table aTable)
 	{
@@ -71,6 +76,7 @@ public class Writer extends IO
 	
 	/**
 	 * タプル群を応答する。
+	 * 良好（2013年12月9日）
 	 */
 	public ArrayList<Tuple> tuples()
 	{
@@ -78,7 +84,8 @@ public class Writer extends IO
 	}
 	
 	/**
-	 * 属性リストを書き出す
+	 * 属性リストを書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	public void writeAttributesOn(BufferedWriter outputWriter)
 	{
@@ -98,6 +105,7 @@ public class Writer extends IO
 	
 	/**
 	 * フッタを書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	public void writeFooterOn(BufferedWriter outputWriter)
 	{
@@ -129,6 +137,7 @@ public class Writer extends IO
 	
 	/**
 	 * ヘッダを書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	public void writeHeaderOn(BufferedWriter outputWriter)
 	{
@@ -140,6 +149,7 @@ public class Writer extends IO
 	
 	/**
 	 * ボディを書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	public void writeTableBodyOn(BufferedWriter outputWriter)
 	{
@@ -150,6 +160,7 @@ public class Writer extends IO
 	
 	/**
 	 * タプルを書き出す。
+	 * 良好（2013年12月9日）
 	 */
 	
 	public void writeTuplesOn(BufferedWriter outputWriter)

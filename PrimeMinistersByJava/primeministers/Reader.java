@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 
 /**
  * リーダ：総理大臣の情報を記したCSVファイルを読み込んでテーブルに仕立て上げる。
+ * 良好（2013年12月9日）
  */
 public class Reader extends IO
 {
@@ -55,7 +56,7 @@ public class Reader extends IO
 	
 	/**
 	 * ダウンロードしたCSVファイルを読み込んでテーブルを応答する。
-	 * バグ（2013年12月8日）
+	 * 良好（2013年12月8日）
 	 */
 	public Table table()
 	{

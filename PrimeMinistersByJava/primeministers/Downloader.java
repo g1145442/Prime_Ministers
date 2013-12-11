@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * ダウンローダ：総理大臣のCSVファイル・画像ファイル・サムネイル画像ファイルをダウンロードする。
+ * バグ（2013年12月9日）
  */
 public class Downloader extends IO
 {
@@ -19,11 +20,13 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の情報を記したCSVファイルの在処(URL文字列)を記憶するフィールド。
+	 * 良好（2013年12月9日）
 	 */
 	private String url;
 	
 	/**
 	 * ダウンローダのコンストラクタ。
+	 * 良好（2013年12月9日）
 	 */
 	public Downloader()
 	{
@@ -32,6 +35,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の情報を記しCSVファイルをダウンロードする。
+	 * 良好（2013年12月9日）
 	 */
 	public void downloadCSV()
 	{
@@ -44,6 +48,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の画像群をダウンロードする。
+	 * 良好（2013年12月9日）
 	 */
 	public void downloadImages()
 	{
@@ -72,6 +77,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の画像群またはサムネイル画像群をダウンロードする。
+	 * 良好（2013年12月9日）
 	 */
 	private void downloadPictures(int indexOfPicture)
 	{
@@ -93,6 +99,7 @@ public class Downloader extends IO
 	
 	/**
 	 * 総理大臣の画像群をダウンロードする。
+	 * 良好（2013年12月9日）
 	 */
 	public void downloadThumbnails()
 	{
