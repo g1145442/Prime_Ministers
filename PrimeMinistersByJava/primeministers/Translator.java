@@ -164,8 +164,26 @@ public class Translator extends Object
 	 */
 	public Table table(Table aTable)
 	{
-		//処理内容
-		//ここに書く... compute系はここで呼ぶ
+
+		Table htmlTable = new Table();
+		htmlTable.attributes(new Attributes("output"));
+		
+		ArrayList<Tuple> tuples = aTable.tuples();
+		
+		for (Tuple aTuple : tuples)
+		{
+			ArrayList<String> input = aTuple.values();
+			ArrayList<String> output = new ArrayList<String>;
+			
+			output.add(input.get(aTuple.attributes().indexOfNo()));//人目
+			output.add(this.computeNumberOfDays(input.get(aTuple.attributes().indexOfPeriod())));//在位日数
+			
+			Tuple htmlTuple = new Tuple(htmlTable.attributes(), output);
+			htmlTable.add(htmlTuple);
+		}
+		
+		this.outputTable = htmlTable;
+		
 		return this.outputTable;
 	}
 	
