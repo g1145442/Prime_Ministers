@@ -64,13 +64,13 @@ public class Translator extends Object
 		/* テーブルの確認用デバッガーもどき */
 		//this.debugTable(); //後で消す
 		
-		//Table aTable = this.table(this.inputTable);
-		/*
+		Table aTable = this.table(this.inputTable);
+		
 		Writer aWriter = new Writer();
 		aWriter.table(aTable);
 		String aString = "総理大臣のCSVファイルからHTMLページへの変換を無事に完了しました。\n";
 		JOptionPane.showMessageDialog(null, aString, "報告", JOptionPane.PLAIN_MESSAGE);
-		*/
+		
 		return;
 	}
 	
@@ -151,9 +151,9 @@ public class Translator extends Object
 	{
 		ArrayList<String> values = aTuple.values();
 		
-		String aNo = values.get(aTuple.attributes().keys().indexOf("No"));
-		String aImage = values.get(aTuple.attributes().keys().indexOf("image"));
-		String aThumbnail = values.get(aTuple.attributes().keys().indexOf("thumbnail"));
+		String aNo = values.get(aTuple.attributes().indexOfNo());
+		String aImage = values.get(aTuple.attributes().indexOfImage());
+		String aThumbnail = values.get(aTuple.attributes().indexOfThumbnail());
 		
 		String imageTag = "<a name="+aNo+" href="+aImage+"><img class=\"borderless\" src="+aThumbnail+" width=\"25\" height=\"32\" alt="+aNo+".jpg></a>";
 		
@@ -175,10 +175,20 @@ public class Translator extends Object
 		for (Tuple aTuple : tuples)
 		{
 			ArrayList<String> input = aTuple.values();
-			ArrayList<String> output = new ArrayList<String>;
+			ArrayList<String> output = new ArrayList<String>();
 			
 			output.add(input.get(aTuple.attributes().indexOfNo()));//人目
+			output.add(input.get(aTuple.attributes().indexOfOrder()));//代
+			output.add(input.get(aTuple.attributes().indexOfName()));//氏名
+			output.add(input.get(aTuple.attributes().indexOfKana()));//ふりがな
+			output.add(input.get(aTuple.attributes().indexOfPeriod()));//在位期間
+			
 			output.add(this.computeNumberOfDays(input.get(aTuple.attributes().indexOfPeriod())));//在位日数
+			
+			output.add(input.get(aTuple.attributes().indexOfSchool()));//出身校
+			output.add(input.get(aTuple.attributes().indexOfParty()));//政党
+			output.add(input.get(aTuple.attributes().indexOfPlace()));//出身地
+			output.add(this.computeStringOfImage(null, aTuple, Integer.valueOf(input.get(aTuple.attributes().indexOfNo()))));//画像
 			
 			Tuple htmlTuple = new Tuple(htmlTable.attributes(), output);
 			htmlTable.add(htmlTuple);
