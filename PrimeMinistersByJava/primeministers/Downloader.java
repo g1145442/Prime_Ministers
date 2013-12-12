@@ -53,6 +53,14 @@ public class Downloader extends IO
 	public void downloadImages()
 	{
 		ArrayList<BufferedImage> images =this.table.images();
+		boolean result = false;	
+
+		File aFile = new File(IO.directoryOfPages(),"images");
+		if(aFile.exists() == false)
+		{
+			aFile.mkdir();
+		}
+
 
 		for(Tuple aTuple :this.table().tuples()){
 			try{
@@ -60,14 +68,25 @@ public class Downloader extends IO
 				String str = (aTuple.values().get(index));
 
 				System.out.println(this.urlString()+aTuple.values().get(index));
-				images.add(ImageIO.read(new URL(this.urlString()+aTuple.values().get(index))));
+				BufferedImage image = ImageIO.read(new URL(this.urlString()+aTuple.values().get(index))); 
+				images.add(image);
+			
+				try {
+					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages()+"image/"+str));
+				} catch (Exception e) {
+					e.printStackTrace();
+					result = false;
+				}
+
+			
 			}
 			catch (Exception anException)
 			{
 				anException.printStackTrace();
 				System.out.println("しっぱい");
 
-			}
+			}	
+
 		}
 		return;
 	}
@@ -101,6 +120,12 @@ public class Downloader extends IO
 	public void downloadThumbnails()
 	{
 		ArrayList<BufferedImage> thumbnails =this.table.thumbnails();
+		boolean result = false;	
+		File aFile = new File(IO.directoryOfPages(),"thumbnails");
+			if(aFile.exists() == false)
+			{
+				aFile.mkdir();
+			}
 
 		for(Tuple aTuple :this.table().tuples()){
 			try{
@@ -108,7 +133,16 @@ public class Downloader extends IO
 				String str = (aTuple.values().get(index));
 
 				System.out.println(this.urlString()+aTuple.values().get(index));
-				thumbnails.add(ImageIO.read(new URL(this.urlString()+aTuple.values().get(index))));
+				BufferedImage image = ImageIO.read(new URL(this.urlString()+aTuple.values().get(index)));
+				thumbnails.add(image);
+				
+				try {
+					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages()+"thumbnails/"+str));
+				} catch (Exception e) {
+					e.printStackTrace();
+					result = false;
+				}
+			
 			}
 			catch (Exception anException)
 			{
@@ -116,24 +150,7 @@ public class Downloader extends IO
 				System.out.println("しっぱい");
 
 			}
-		}
-
-		/*
-		int urlMaxNum = 23;
-		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
-		for(int i=0;i<urlMaxNum;i++)
-		{
-			try
-			{
-				readImage[i] = ImageIO.read(new URL(this.urlString() + "images/0"+Integer.toString(i+39)+".jpg"));
-			}
-			catch (Exception anException)
-			{
-				anException.printStackTrace();
-				System.out.println((i+39)+"しっぱい");
-			}
-		}
-		*/
+		}	
 		return;
 	}
 	
