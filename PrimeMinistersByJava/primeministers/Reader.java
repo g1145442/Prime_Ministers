@@ -70,7 +70,7 @@ public class Reader extends IO
 			if(isFirstLine)
 			{
 				inputTable.attributes(new Attributes("input"));
-				inputTable.attributes().names(aRaw);
+				//inputTable.attributes().names(aRaw);
 				isFirstLine = false;
 			}
 			else

@@ -46,6 +46,7 @@ public class Attributes extends Object
 			{
 				this.keys.add(inputString);
 			}
+			this.names(aCollection);
 		}
 		else if(aString == "output")
 		{
@@ -59,6 +60,7 @@ public class Attributes extends Object
 			{
 				this.keys.add(outputString);
 			}
+			this.names(aCollection);
 		}
 		else
 		{

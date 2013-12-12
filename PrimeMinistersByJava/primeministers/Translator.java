@@ -60,7 +60,7 @@ public class Translator extends Object
 		this.inputTable = aDownload.table();
 		
 		/* テーブルの確認用デバッガーもどき */
-		this.debugTable(); //後で消す
+		//this.debugTable(); //後で消す
 		
 		//Table aTable = this.table(this.inputTable);
 		/*

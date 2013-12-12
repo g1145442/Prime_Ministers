@@ -52,9 +52,6 @@ public class Downloader extends IO
 	 */
 	public void downloadImages()
 	{
-		for (Tuple aTuple : this.table().tuples())
-		{
-		}
 		
 		
 		/*
