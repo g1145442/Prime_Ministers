@@ -40,5 +40,10 @@ class Example(object):
 		# Webページを作成してもらう。
 		a_writer = writer.Writer(base_directory, a_table)
 		a_writer.write()
-        
+		
+		print "変換が終了し、htmlファイルを出力しました。"
 		return 0
+
+if __name__ == '__main__':
+	e = Example()
+	e.main()

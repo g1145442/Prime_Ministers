@@ -10,10 +10,15 @@ class Reader(io.IO):
 
 	def __init__(self, csv_filename):
 		"""リーダのコンストラクタ。"""
-		self.filename = csv_filename
+		self._csv_filename = csv_filename
 		return
 
 	def table(self):
 		"""ダウンロードしたCSVファイルを読み込んでテーブルを応答する。"""
-		
-		return None
+		csv_file = self.read_csv(self._csv_filename)
+		csv_table = table.Table(csv_file[0])
+		csv_file.pop(0)
+		for row in csv_file:
+			a_list = row.split(",")
+			csv_table.add(tuple.Tuple(csv_table.attributes(), a_list))
+		return csv_table

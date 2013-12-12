@@ -14,14 +14,17 @@ class Downloader(io.IO):
 	def __init__(self, base_directory):
 		"""ダウンローダのコンストラクタ。"""
 		self.base_directory = base_directory
-		self.url = 'http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters'
-		self.filename_of_csv = 'PrimeMinister.csv'
+		#self.url = 'http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/CSV2HTML/PrimeMinisters'
+		#self.filename_of_csv = 'PrimeMinister.csv'
 		return
 
 	def download_all(self):
 		"""すべて（総理大臣の情報を記したCSVファイル・画像ファイル群・縮小画像ファイル群）をダウンロードし、テーブルを応答する。"""
 		self.download_csv()
-		return None
+		a_reader = reader.Reader(self._base_directory+"PrimeMinisters.csv")
+		for i in range(39, 63):
+			self.download_images(i)
+		return a_reader.table()
 
 	def download_csv(self):
 		"""総理大臣の情報を記したCSVファイルをダウンロードする。"""
