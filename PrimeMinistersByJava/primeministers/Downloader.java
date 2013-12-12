@@ -52,28 +52,23 @@ public class Downloader extends IO
 	 */
 	public void downloadImages()
 	{
-		
-		for(Tuple aTuple :this.table().tuples()){
-			int index = aTuple.attributes().indexOfImage();
-			System.out.println(aTuple.values().get(index));
-		}
+		ArrayList<BufferedImage> images =this.table.images();
 
-		
-		/*
-		int urlMaxNum = 23;
-		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
-		for(int i=0;i<urlMaxNum;i++)
-		{
-			try
-			{
-				readImage[i] = ImageIO.read(new URL(this.urlString()+"images/0"+Integer.toString(i+39)+".jpg"));
+		for(Tuple aTuple :this.table().tuples()){
+			try{
+				int index = aTuple.attributes().indexOfImage();
+				String str = (aTuple.values().get(index));
+
+				System.out.println(this.urlString()+aTuple.values().get(index));
+				images.add(ImageIO.read(new URL(this.urlString()+aTuple.values().get(index))));
 			}
 			catch (Exception anException)
 			{
 				anException.printStackTrace();
-				System.out.println((i+39)+"しっぱい");
+				System.out.println("しっぱい");
+
 			}
-		} */
+		}
 		return;
 	}
 	
@@ -105,6 +100,24 @@ public class Downloader extends IO
 	 */
 	public void downloadThumbnails()
 	{
+		ArrayList<BufferedImage> thumbnails =this.table.thumbnails();
+
+		for(Tuple aTuple :this.table().tuples()){
+			try{
+				int index = aTuple.attributes().indexOfThumbnail();
+				String str = (aTuple.values().get(index));
+
+				System.out.println(this.urlString()+aTuple.values().get(index));
+				thumbnails.add(ImageIO.read(new URL(this.urlString()+aTuple.values().get(index))));
+			}
+			catch (Exception anException)
+			{
+				anException.printStackTrace();
+				System.out.println("しっぱい");
+
+			}
+		}
+
 		/*
 		int urlMaxNum = 23;
 		BufferedImage readImage[] = new BufferedImage[urlMaxNum];
