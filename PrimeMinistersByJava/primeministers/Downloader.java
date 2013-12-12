@@ -72,7 +72,8 @@ public class Downloader extends IO
 				images.add(image);
 			
 				try {
-					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages()+"image/"+str));
+					System.out.println("あ:"+str);
+					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages(),str));
 				} catch (Exception e) {
 					e.printStackTrace();
 					result = false;
@@ -137,7 +138,8 @@ public class Downloader extends IO
 				thumbnails.add(image);
 				
 				try {
-					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages()+"thumbnails/"+str));
+					System.out.println("あ:"+str);
+					result = ImageIO.write(image, "jpeg", new File(IO.directoryOfPages(),str));
 				} catch (Exception e) {
 					e.printStackTrace();
 					result = false;
