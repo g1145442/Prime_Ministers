@@ -54,7 +54,8 @@ public class Downloader extends IO
 	{
 		
 		for(Tuple aTuple :this.table().tuples()){
-			System.out.println(aTuple.attributes().indexOfImage());
+			int index = aTuple.attributes().indexOfImage();
+			System.out.println(aTuple.values().get(index));
 		}
 
 		

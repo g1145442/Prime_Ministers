@@ -46,7 +46,7 @@ public class Attributes extends Object
 			{
 				this.keys.add(inputString);
 			}
-			this.names(aCollection);
+			
 		}
 		else if(aString == "output")
 		{
@@ -60,7 +60,6 @@ public class Attributes extends Object
 			{
 				this.keys.add(outputString);
 			}
-			this.names(aCollection);
 		}
 		else
 		{
@@ -92,7 +91,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfDays()
 	{
-		return this.indexOf("day");
+		return this.keys.indexOf("day");
 	}
 	
 	/**
@@ -101,7 +100,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfImage()
 	{
-		return this.indexOf("image");
+		return this.keys.indexOf("image");
 	}
 	
 	/**
@@ -110,7 +109,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfKana()
 	{
-		return this.indexOf("kana");
+		return this.keys.indexOf("kana");
 	}
 	
 	/**
@@ -119,7 +118,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfName()
 	{
-		return this.indexOf("names");
+		return this.keys.indexOf("names");
 	}
 	
 	/**
@@ -128,7 +127,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfNo()
 	{
-		return this.indexOf("no");
+		return this.keys.indexOf("no");
 	}
 	
 	/**
@@ -137,7 +136,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfOrder()
 	{
-		return this.indexOf("order");
+		return this.keys.indexOf("order");
 	}
 	
 	/**
@@ -146,7 +145,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfParty()
 	{
-		return this.indexOf("party");
+		return this.keys.indexOf("party");
 	}
 	
 	/**
@@ -155,7 +154,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfPeriod()
 	{
-		return this.indexOf("period");
+		return this.keys.indexOf("period");
 	}
 	
 	/**
@@ -164,7 +163,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfPlace()
 	{
-		return this.indexOf("birth");
+		return this.keys.indexOf("birth");
 	}
 	
 	/**
@@ -173,7 +172,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfSchool()
 	{
-		return this.indexOf("school");
+		return this.keys.indexOf("school");
 	}
 	
 	/**
@@ -182,7 +181,7 @@ public class Attributes extends Object
 	 */
 	public int indexOfThumbnail()
 	{
-		return this.indexOf("thumbnail");
+		return this.keys.indexOf("thumbnail");
 	}
 	
 	/**
