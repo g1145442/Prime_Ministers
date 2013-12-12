@@ -52,10 +52,12 @@ public class Downloader extends IO
 	 */
 	public void downloadImages()
 	{
-		for (Tuple aTuple : this.table().tuples())
-		{
-		}
 		
+		for(Tuple aTuple :this.table().tuples()){
+			int index = aTuple.attributes().indexOfImage();
+			System.out.println(aTuple.values().get(index));
+		}
+
 		
 		/*
 		int urlMaxNum = 23;

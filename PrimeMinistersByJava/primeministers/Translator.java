@@ -59,8 +59,10 @@ public class Translator extends Object
 		aDownload.downloadCSV();
 		this.inputTable = aDownload.table();
 		
+		aDownload.downloadImages();
+
 		/* テーブルの確認用デバッガーもどき */
-		this.debugTable(); //後で消す
+		//this.debugTable(); //後で消す
 		
 		//Table aTable = this.table(this.inputTable);
 		/*
