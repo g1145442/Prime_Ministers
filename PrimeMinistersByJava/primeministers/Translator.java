@@ -174,21 +174,22 @@ public class Translator extends Object
 		
 		for (Tuple aTuple : tuples)
 		{
-			ArrayList<String> input = aTuple.values();
+			ArrayList<String> values = aTuple.values();
+			Attributes attribute = aTuple.attributes();
 			ArrayList<String> output = new ArrayList<String>();
 			
-			output.add(input.get(aTuple.attributes().indexOfNo()));//人目
-			output.add(input.get(aTuple.attributes().indexOfOrder()));//代
-			output.add(input.get(aTuple.attributes().indexOfName()));//氏名
-			output.add(input.get(aTuple.attributes().indexOfKana()));//ふりがな
-			output.add(input.get(aTuple.attributes().indexOfPeriod()));//在位期間
+			output.add(values.get(attribute.indexOfNo()));//人目
+			output.add(values.get(attribute.indexOfOrder()));//代
+			output.add(values.get(attribute.indexOfName()));//氏名
+			output.add(values.get(attribute.indexOfKana()));//ふりがな
+			output.add(values.get(attribute.indexOfPeriod()));//在位期間
 			
-			output.add(this.computeNumberOfDays(input.get(aTuple.attributes().indexOfPeriod())));//在位日数
+			output.add(this.computeNumberOfDays(values.get(attribute.indexOfPeriod())));//在位日数
 			
-			output.add(input.get(aTuple.attributes().indexOfSchool()));//出身校
-			output.add(input.get(aTuple.attributes().indexOfParty()));//政党
-			output.add(input.get(aTuple.attributes().indexOfPlace()));//出身地
-			output.add(this.computeStringOfImage(null, aTuple, Integer.valueOf(input.get(aTuple.attributes().indexOfNo()))));//画像
+			output.add(values.get(attribute.indexOfSchool()));//出身校
+			output.add(values.get(attribute.indexOfParty()));//政党
+			output.add(values.get(attribute.indexOfPlace()));//出身地
+			output.add(this.computeStringOfImage(null, aTuple, Integer.valueOf(values.get(attribute.indexOfNo()))));//画像
 			
 			Tuple htmlTuple = new Tuple(htmlTable.attributes(), output);
 			htmlTable.add(htmlTuple);
